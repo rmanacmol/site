@@ -12,7 +12,19 @@
         .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
         .gradient-text { background: linear-gradient(90deg, #3b82f6, #60a5fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .hero-glow { position: absolute; top: -10%; left: 50%; transform: translateX(-50%); width: 80%; height: 50%; background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(15, 23, 42, 0) 70%); z-index: -1; }
-        .card-hover:hover { transform: translateY(-5px); transition: all 0.3s ease; border-color: rgba(59, 130, 246, 0.5); }
+        .card-hover:hover { transform: translateY(-8px); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border-color: rgba(59, 130, 246, 0.5); box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.2); }
+        
+        .project-logo-container {
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 24px;
+            overflow: hidden;
+            margin-bottom: 24px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
     </style>
 </head>
 <body class="selection:bg-blue-500/30">
@@ -25,63 +37,119 @@
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-xl font-bold tracking-tight">RENZ<span class="text-blue-500">.</span></a>
             <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-400">
-                <a href="#about" class="hover:text-blue-400 transition">About</a>
-                <a href="#experience" class="hover:text-blue-400 transition">Experience</a>
                 <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
+                <a href="#about" class="hover:text-blue-400 transition">Skills</a>
+                <a href="#experience" class="hover:text-blue-400 transition">Experience</a>
                 <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
             </div>
-            <a href="mailto:manacmol@gmail.com" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2 rounded-full text-sm font-semibold transition shadow-lg shadow-blue-500/20">Hire Me</a>
+            <a href="mailto:manacmol@gmail.com?subject=Inquiry for Senior Android Engineer Position" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2 rounded-full text-sm font-semibold transition shadow-lg shadow-blue-500/20">Hire Me</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="pt-32 pb-20 px-6">
-        <div class="max-w-4xl mx-auto text-center">
+    <section class="pt-40 pb-20 px-6">
+        <div class="max-w-5xl mx-auto text-center">
             <div class="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 px-4 py-1 rounded-full text-blue-400 text-xs font-bold mb-8 uppercase tracking-widest">
                 <span>Available for Global Relocation</span>
             </div>
-            <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
-                Architecting the Future of <span class="gradient-text">Mobile</span>.
+            <h1 class="text-6xl md:text-9xl font-bold mb-6 tracking-tighter">
+                <span class="text-white">I'm </span><br class="md:hidden">
+                <span class="gradient-text">Renz Manacmol</span>
             </h1>
+            <p class="text-2xl md:text-3xl font-light text-slate-300 mb-8 tracking-tight">
+                Architecting the Future of <span class="text-blue-500 font-semibold">Mobile</span>.
+            </p>
             <p class="text-xl text-slate-400 mb-10 leading-relaxed max-w-2xl mx-auto">
-                Senior Android Engineer with 9+ years of expertise. Building high-performance FinTech and GovTech applications with an AI-first approach.
+                Senior Android Engineer with 10+ years of expertise. Specializing in high-performance FinTech and GovTech applications with an AI-first engineering workflow.
             </p>
             <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
-                <a href="#experience" class="bg-slate-800 hover:bg-slate-700 text-white px-8 py-4 rounded-xl font-semibold transition flex items-center justify-center">
-                    View Experience <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i>
+                <a href="#projects" class="bg-blue-600 hover:bg-blue-500 text-white px-10 py-5 rounded-xl font-bold transition flex items-center justify-center shadow-xl shadow-blue-500/30 text-lg">
+                    Explore My Projects <i data-lucide="external-link" class="ml-2 w-5 h-5"></i>
                 </a>
                 <div class="flex items-center justify-center space-x-6 px-4">
-                    <a href="https://rmanacmol.github.io/site/" class="text-slate-400 hover:text-blue-400 transition flex items-center"><i data-lucide="globe" class="w-5 h-5 mr-2"></i> Portfolio</a>
-                    <a href="https://github.com/rmanacmol" class="text-slate-400 hover:text-blue-400 transition flex items-center"><i data-lucide="github" class="w-5 h-5 mr-2"></i> GitHub</a>
+                    <a href="https://github.com/rmanacmol" target="_blank" class="text-slate-400 hover:text-blue-400 transition flex items-center"><i data-lucide="github" class="w-6 h-6 mr-2"></i> GitHub</a>
+                    <a href="mailto:manacmol@gmail.com" class="text-slate-400 hover:text-blue-400 transition flex items-center"><i data-lucide="mail" class="w-6 h-6 mr-2"></i> Email</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- AI Assistant Floating Section -->
-    <div id="ai-chat" class="fixed bottom-6 right-6 z-50">
-        <div id="chat-window" class="hidden mb-4 w-80 md:w-96 glass rounded-2xl overflow-hidden shadow-2xl flex flex-col h-[500px]">
-            <div class="bg-blue-600 p-4 flex justify-between items-center">
-                <div class="flex items-center space-x-2">
-                    <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                    <span class="text-sm font-bold">Resume AI Assistant</span>
+    <!-- Major Project Impact -->
+    <section id="projects" class="py-24 px-6 bg-slate-900/30">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl font-bold text-center mb-4 text-white tracking-tighter">Major Project Impact</h2>
+            <p class="text-center text-slate-400 mb-16 text-lg">High-impact applications delivered to millions of users.</p>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- BDO Pay -->
+                <div class="glass rounded-3xl overflow-hidden card-hover border-blue-500/20">
+                    <div class="p-8 pb-0 flex flex-col items-center">
+                        <div class="project-logo-container bg-[#1a4da1] relative">
+                            <svg viewBox="0 0 100 100" class="w-full h-full p-2">
+                                <text x="15" y="45" font-family="Arial, sans-serif" font-weight="900" font-size="32" fill="white">BD</text>
+                                <circle cx="75" cy="35" r="12" fill="none" stroke="#facc15" stroke-width="6" />
+                                <text x="18" y="75" font-family="Arial, sans-serif" font-weight="700" font-size="22" fill="white">pay</text>
+                                <!-- Bottom Waves -->
+                                <path d="M0 85 Q25 75 50 85 T100 85 V100 H0 Z" fill="#4d89e5" opacity="0.4" />
+                                <path d="M0 90 Q25 80 50 90 T100 90 V100 H0 Z" fill="#80b3ff" opacity="0.3" />
+                            </svg>
+                        </div>
+                        <div class="inline-block bg-blue-500/20 text-blue-400 text-[10px] font-black px-3 py-1 rounded-full mb-4 uppercase">FinTech</div>
+                        <h3 class="font-bold text-2xl mb-2 text-white">BDO Pay</h3>
+                        <p class="text-slate-400 text-sm text-center mb-8 leading-relaxed h-12">Core contributor to the pioneer repository; developed foundational features like Scan to Pay.</p>
+                        <a href="https://play.google.com/store/apps/details?id=ph.com.bdo.pay&hl=en_SG" target="_blank" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-xl flex items-center justify-center transition shadow-lg shadow-blue-600/20 mb-8">
+                            View App Store <i data-lucide="play-circle" class="ml-2 w-5 h-5"></i>
+                        </a>
+                    </div>
                 </div>
-                <button onclick="toggleChat()" class="text-white/70 hover:text-white"><i data-lucide="x" class="w-5 h-5"></i></button>
-            </div>
-            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto text-sm space-y-4 bg-slate-900/50">
-                <div class="bg-slate-800 p-3 rounded-lg rounded-tl-none border border-slate-700 max-w-[85%]">
-                    Hello! I'm Renz's AI assistant. Ask me anything about his experience at Backbase, Lenovo, or his technical skills.
+
+                <!-- OneService -->
+                <div class="glass rounded-3xl overflow-hidden card-hover border-blue-500/20">
+                    <div class="p-8 pb-0 flex flex-col items-center">
+                        <div class="project-logo-container bg-white">
+                            <svg viewBox="0 0 200 80" class="w-full h-full p-2">
+                                <!-- Modernized OneService Logo Representation -->
+                                <g transform="translate(10, 10) scale(0.6)">
+                                    <path d="M40 0 L70 20 V60 L40 80 L10 60 V20 Z" fill="none" stroke="#5da99b" stroke-width="8"/>
+                                    <rect x="25" y="25" width="30" height="30" fill="#f4d03f"/>
+                                    <path d="M55 25 L75 45 L55 65" stroke="#e91e63" stroke-width="8" fill="none"/>
+                                    <path d="M25 25 L5 45 L25 65" stroke="#3498db" stroke-width="8" fill="none"/>
+                                </g>
+                                <text x="65" y="45" font-family="Arial, sans-serif" font-weight="900" font-size="24" fill="black">ONESERVICE</text>
+                                <text x="65" y="65" font-family="Arial, sans-serif" font-weight="400" font-size="10" fill="#666">MUNICIPAL SERVICES OFFICE</text>
+                            </svg>
+                        </div>
+                        <div class="inline-block bg-green-500/20 text-green-400 text-[10px] font-black px-3 py-1 rounded-full mb-4 uppercase tracking-wider">GovTech</div>
+                        <h3 class="font-bold text-2xl mb-2 text-white">OneService</h3>
+                        <p class="text-slate-400 text-sm text-center mb-8 leading-relaxed h-12">Engineered citizen-facing features and managed critical GCloud to GPC infrastructure migration.</p>
+                        <a href="https://www.oneservice.gov.sg/" target="_blank" class="w-full bg-slate-800 hover:bg-slate-700 text-white font-bold py-4 rounded-xl flex items-center justify-center transition border border-slate-700 mb-8">
+                            Visit Website <i data-lucide="globe" class="ml-2 w-5 h-5"></i>
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="p-4 border-t border-slate-700 flex space-x-2">
-                <input type="text" id="chat-input" placeholder="Ask about BDO Pay project..." class="flex-1 bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-500">
-                <button onclick="sendMessage()" class="bg-blue-600 p-2 rounded-lg hover:bg-blue-500 transition"><i data-lucide="send" class="w-5 h-5"></i></button>
+
+                <!-- Chinabank Digital -->
+                <div class="glass rounded-3xl overflow-hidden card-hover border-blue-500/20">
+                    <div class="p-8 pb-0 flex flex-col items-center">
+                        <div class="project-logo-container bg-[#ed1c24]">
+                            <svg viewBox="0 0 100 100" class="w-full h-full p-3">
+                                <!-- My CBC Logo Recreation -->
+                                <path d="M80 30 V20 H20 V80 H80 V70" fill="none" stroke="white" stroke-width="12" stroke-linecap="square"/>
+                                <path d="M45 40 H70 V50 H45 V60 H70" fill="none" stroke="white" stroke-width="8" stroke-linecap="square"/>
+                                <text x="50" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="14" fill="white">My CBC</text>
+                            </svg>
+                        </div>
+                        <div class="inline-block bg-red-500/20 text-red-400 text-[10px] font-black px-3 py-1 rounded-full mb-4 uppercase tracking-wider">Banking</div>
+                        <h3 class="font-bold text-2xl mb-2 text-white">Chinabank Digital</h3>
+                        <p class="text-slate-400 text-sm text-center mb-8 leading-relaxed h-12">End-to-end development of major transactional modules for the native mobile application.</p>
+                        <a href="https://play.google.com/store/apps/details?id=ph.chinabank.digital" target="_blank" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-xl flex items-center justify-center transition shadow-lg shadow-blue-600/20 mb-8">
+                            View App Store <i data-lucide="play-circle" class="ml-2 w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-        <button onclick="toggleChat()" class="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center shadow-xl shadow-blue-500/40 hover:scale-110 transition active:scale-95">
-            <i data-lucide="sparkles" class="text-white w-7 h-7"></i>
-        </button>
-    </div>
+    </section>
 
     <!-- Technical Stack Section -->
     <section class="py-20 px-6 bg-slate-900/50" id="about">
@@ -90,45 +158,43 @@
                 <div>
                     <h2 class="text-3xl font-bold mb-6">Mastering the <span class="text-blue-500">Android Ecosystem</span></h2>
                     <p class="text-slate-400 mb-8 leading-relaxed">
-                        With nearly a decade in mobile development, I focus on scalable architecture and performance optimization. My current workflow integrates the latest AI tools to push the boundaries of productivity and code quality.
+                        With over a decade in mobile development, I focus on scalable architecture and performance optimization. My current workflow integrates the latest AI tools to push the boundaries of productivity and code quality.
                     </p>
                     <div class="grid grid-cols-2 gap-4">
                         <div class="glass p-4 rounded-xl">
-                            <h4 class="text-blue-400 font-bold text-lg mb-1">9+ Years</h4>
-                            <p class="text-slate-500 text-xs">Professional Experience</p>
+                            <h4 class="text-blue-400 font-bold text-lg mb-1">10+ Years</h4>
+                            <p class="text-slate-500 text-xs uppercase font-bold tracking-wider">Industry Experience</p>
                         </div>
                         <div class="glass p-4 rounded-xl">
                             <h4 class="text-blue-400 font-bold text-lg mb-1">AI-First</h4>
-                            <p class="text-slate-500 text-xs">Engineering Workflow</p>
+                            <p class="text-slate-500 text-xs uppercase font-bold tracking-wider">Engineering Workflow</p>
                         </div>
                     </div>
                 </div>
                 <div class="grid grid-cols-3 gap-4">
-                    <!-- Tech Icons -->
                     <div class="glass p-6 rounded-2xl flex flex-col items-center justify-center space-y-2 card-hover">
                         <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/kotlin/kotlin-original.svg" class="w-10 h-10" alt="Kotlin">
-                        <span class="text-[10px] font-bold">KOTLIN</span>
+                        <span class="text-[10px] font-bold uppercase">Kotlin</span>
                     </div>
                     <div class="glass p-6 rounded-2xl flex flex-col items-center justify-center space-y-2 card-hover">
                         <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" class="w-10 h-10" alt="Java">
-                        <span class="text-[10px] font-bold">JAVA</span>
+                        <span class="text-[10px] font-bold uppercase">Java</span>
                     </div>
                     <div class="glass p-6 rounded-2xl flex flex-col items-center justify-center space-y-2 card-hover">
                         <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original.svg" class="w-10 h-10" alt="Android">
-                        <span class="text-[10px] font-bold">SDK</span>
+                        <span class="text-[10px] font-bold uppercase">SDK</span>
                     </div>
-                    <!-- AI Tools -->
                     <div class="glass p-6 rounded-2xl flex flex-col items-center justify-center space-y-2 border-blue-500/30 card-hover bg-blue-500/5">
                         <i data-lucide="zap" class="text-blue-400 w-10 h-10"></i>
-                        <span class="text-[10px] font-bold">CURSOR</span>
+                        <span class="text-[10px] font-bold uppercase">Cursor</span>
                     </div>
                     <div class="glass p-6 rounded-2xl flex flex-col items-center justify-center space-y-2 border-blue-500/30 card-hover bg-blue-500/5">
                         <i data-lucide="bot" class="text-blue-400 w-10 h-10"></i>
-                        <span class="text-[10px] font-bold">CLAUDE</span>
+                        <span class="text-[10px] font-bold uppercase">Claude</span>
                     </div>
                     <div class="glass p-6 rounded-2xl flex flex-col items-center justify-center space-y-2 border-blue-500/30 card-hover bg-blue-500/5">
                         <i data-lucide="stars" class="text-blue-400 w-10 h-10"></i>
-                        <span class="text-[10px] font-bold">GEMINI</span>
+                        <span class="text-[10px] font-bold uppercase">Gemini</span>
                     </div>
                 </div>
             </div>
@@ -139,12 +205,11 @@
     <section id="experience" class="py-24 px-6">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 tracking-tight">Professional Journey</h2>
+                <h2 class="text-4xl font-bold mb-4 tracking-tight text-white">Professional Journey</h2>
                 <p class="text-slate-400">Collaborating with global leaders in banking and government services.</p>
             </div>
 
             <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-blue-500 before:to-transparent">
-                <!-- Backbase -->
                 <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
                     <div class="flex items-center justify-center w-10 h-10 rounded-full border border-slate-700 bg-slate-900 group-[.is-active]:bg-blue-600 group-[.is-active]:border-blue-500 text-slate-500 group-[.is-active]:text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
                         <i data-lucide="briefcase" class="w-5 h-5"></i>
@@ -154,15 +219,14 @@
                             <span class="text-blue-400 text-xs font-bold uppercase">2022 - Present</span>
                             <span class="text-slate-500 text-xs">Singapore</span>
                         </div>
-                        <h3 class="font-bold text-xl mb-1">Senior Android Engineer</h3>
-                        <p class="text-slate-300 font-medium text-sm mb-4">Backbase</p>
+                        <h3 class="font-bold text-xl mb-1 text-white">Senior Android Engineer</h3>
+                        <p class="text-blue-400 font-semibold text-sm mb-4 uppercase tracking-wider">Backbase</p>
                         <p class="text-slate-400 text-sm leading-relaxed">
-                            Scaling core banking components for top-tier financial products. Leading BDO Pay's QR & P2P initiatives.
+                            Scaling core banking components for top-tier financial products. Leading BDO Pay and Chinabank Digital technical initiatives.
                         </p>
                     </div>
                 </div>
 
-                <!-- Lenovo -->
                 <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
                     <div class="flex items-center justify-center w-10 h-10 rounded-full border border-slate-700 bg-slate-900 text-slate-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
                         <i data-lucide="briefcase" class="w-5 h-5"></i>
@@ -172,10 +236,10 @@
                             <span class="text-blue-400 text-xs font-bold uppercase">2018 - 2022</span>
                             <span class="text-slate-500 text-xs">Singapore</span>
                         </div>
-                        <h3 class="font-bold text-xl mb-1">Senior Android Engineer</h3>
-                        <p class="text-slate-300 font-medium text-sm mb-4">Lenovo PCCW Solutions</p>
+                        <h3 class="font-bold text-xl mb-1 text-white">Senior Android Engineer</h3>
+                        <p class="text-blue-400 font-semibold text-sm mb-4 uppercase tracking-wider">Lenovo PCCW Solutions</p>
                         <p class="text-slate-400 text-sm leading-relaxed">
-                            Driving GovTech modernization for OneService Singapore. Spearheaded GCloud to GPC migration.
+                            Driving GovTech modernization for OneService Singapore. Spearheaded critical infrastructure migrations.
                         </p>
                     </div>
                 </div>
@@ -183,106 +247,75 @@
         </div>
     </section>
 
-    <!-- Key Projects -->
-    <section id="projects" class="py-24 px-6 bg-slate-900/30">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-16">Featured Impact</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- BDO Pay -->
-                <div class="glass rounded-2xl overflow-hidden card-hover">
-                    <div class="h-48 bg-blue-900/30 flex items-center justify-center p-8">
-                        <i data-lucide="wallet" class="w-16 h-16 text-blue-500 opacity-50"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl mb-2">BDO Pay</h3>
-                        <p class="text-slate-400 text-sm mb-4">Pioneered QR-based payments and P2P transactions for the pioneer BDO repository.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-blue-500/10 text-blue-400 text-[10px] px-2 py-1 rounded-md font-bold uppercase">FinTech</span>
-                            <span class="bg-slate-700 text-slate-300 text-[10px] px-2 py-1 rounded-md font-bold uppercase">Architecture</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- OneService -->
-                <div class="glass rounded-2xl overflow-hidden card-hover">
-                    <div class="h-48 bg-blue-900/30 flex items-center justify-center p-8">
-                        <i data-lucide="building" class="w-16 h-16 text-blue-500 opacity-50"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl mb-2">OneService</h3>
-                        <p class="text-slate-400 text-sm mb-4">Singapore MND Platform. Scaled citizen-facing features across Android and iOS platforms.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-blue-500/10 text-blue-400 text-[10px] px-2 py-1 rounded-md font-bold uppercase">GovTech</span>
-                            <span class="bg-slate-700 text-slate-300 text-[10px] px-2 py-1 rounded-md font-bold uppercase">Migration</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Chinabank -->
-                <div class="glass rounded-2xl overflow-hidden card-hover">
-                    <div class="h-48 bg-blue-900/30 flex items-center justify-center p-8">
-                        <i data-lucide="credit-card" class="w-16 h-16 text-blue-500 opacity-50"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl mb-2">Chinabank</h3>
-                        <p class="text-slate-400 text-sm mb-4">End-to-end development of major transactional features for the native application.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-blue-500/10 text-blue-400 text-[10px] px-2 py-1 rounded-md font-bold uppercase">Native SDK</span>
-                            <span class="bg-slate-700 text-slate-300 text-[10px] px-2 py-1 rounded-md font-bold uppercase">Banking</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer / Contact -->
+    <!-- Footer -->
     <footer id="contact" class="py-20 px-6 border-t border-slate-800">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-6 tracking-tight">Let's build something <span class="gradient-text">exceptional</span>.</h2>
-            <p class="text-slate-400 mb-10 leading-relaxed">Currently based in Singapore, open to high-impact opportunities worldwide.</p>
+            <h2 class="text-5xl font-bold mb-6 tracking-tighter">Let's build something <span class="gradient-text">exceptional</span>.</h2>
+            <p class="text-slate-400 mb-10 leading-relaxed text-lg">Currently based in Singapore, open to high-impact opportunities worldwide.</p>
             <div class="flex justify-center space-x-6 mb-12">
-                <a href="mailto:manacmol@gmail.com" class="p-4 bg-slate-800 rounded-full hover:bg-blue-600 hover:text-white transition"><i data-lucide="mail"></i></a>
-                <a href="https://linkedin.com/in/rmanacmol" class="p-4 bg-slate-800 rounded-full hover:bg-blue-600 hover:text-white transition"><i data-lucide="linkedin"></i></a>
-                <a href="https://github.com/rmanacmol" class="p-4 bg-slate-800 rounded-full hover:bg-blue-600 hover:text-white transition"><i data-lucide="github"></i></a>
+                <a href="mailto:manacmol@gmail.com" class="p-5 bg-slate-800 rounded-full hover:bg-blue-600 hover:text-white transition shadow-lg"><i data-lucide="mail" class="w-6 h-6"></i></a>
+                <a href="https://www.linkedin.com/in/renz-manacmol-a389a1112/" target="_blank" class="p-5 bg-slate-800 rounded-full hover:bg-blue-600 hover:text-white transition shadow-lg"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+                <a href="https://github.com/rmanacmol" target="_blank" class="p-5 bg-slate-800 rounded-full hover:bg-blue-600 hover:text-white transition shadow-lg"><i data-lucide="github" class="w-6 h-6"></i></a>
             </div>
-            <p class="text-slate-600 text-sm">© 2026 Renz Manacmol. Built with Gemini & Passion for Mobile Engineering.</p>
+            <p class="text-slate-600 text-sm">© 2026 Renz Manacmol. Engineered with precision.</p>
         </div>
     </footer>
 
+    <!-- AI Assistant Floating Section -->
+    <div id="ai-chat" class="fixed bottom-6 right-6 z-50">
+        <div id="chat-window" class="hidden mb-4 w-80 md:w-96 glass rounded-2xl overflow-hidden shadow-2xl flex flex-col h-[500px]">
+            <div class="bg-blue-600 p-4 flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                    <span class="text-sm font-bold text-white">Resume AI Assistant</span>
+                </div>
+                <button onclick="toggleChat()" class="text-white/70 hover:text-white"><i data-lucide="x" class="w-5 h-5"></i></button>
+            </div>
+            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto text-sm space-y-4 bg-slate-900/50 text-white">
+                <div class="bg-slate-800 p-3 rounded-lg rounded-tl-none border border-slate-700 max-w-[85%]">
+                    Hello! I'm Renz's AI assistant. Ask me anything about his 10+ years of experience at Backbase, Lenovo, or his technical skills.
+                </div>
+            </div>
+            <div class="p-4 border-t border-slate-700 flex space-x-2">
+                <input type="text" id="chat-input" placeholder="Ask about BDO Pay..." class="flex-1 bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-500 text-white">
+                <button onclick="sendMessage()" class="bg-blue-600 p-2 rounded-lg hover:bg-blue-500 transition text-white"><i data-lucide="send" class="w-5 h-5"></i></button>
+            </div>
+        </div>
+        <button onclick="toggleChat()" class="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center shadow-xl shadow-blue-500/40 hover:scale-110 transition active:scale-95">
+            <i data-lucide="sparkles" class="text-white w-7 h-7"></i>
+        </button>
+    </div>
+
     <script>
-        // Lucide Icons initialization
         lucide.createIcons();
 
-        // Chat Toggle
         const chatWindow = document.getElementById('chat-window');
-        function toggleChat() {
-            chatWindow.classList.toggle('hidden');
-        }
+        function toggleChat() { chatWindow.classList.toggle('hidden'); }
 
-        // Gemini AI Integration
-        const apiKey = ""; // Environment provided
+        const apiKey = ""; 
         const chatMessages = document.getElementById('chat-messages');
         const chatInput = document.getElementById('chat-input');
 
-        const systemPrompt = `You are the AI assistant for Renz Manacmol, a Senior Android Engineer.
+        const systemPrompt = `You are the AI assistant for Renz Manacmol, a Senior Android Engineer with over 10 years of experience.
         Experience Details: 
-        - Currently at Backbase (Singapore) since 2022. Working on BDO Pay (QR, P2P) and Chinabank.
+        - Currently at Backbase (Singapore) since 2022. Working on BDO Pay (QR, P2P) and Chinabank Digital.
+        - Major projects with links:
+          1. BDO Pay: https://play.google.com/store/apps/details?id=ph.com.bdo.pay
+          2. Chinabank Digital: https://play.google.com/store/apps/details?id=ph.chinabank.digital
+          3. OneService: https://www.oneservice.gov.sg/
         - Previous: Lenovo PCCW (2018-2022) working on OneService Singapore (MND).
-        - Experience in Mummys Market, Imfree, ISBX, and TIP.
+        - LinkedIn: https://www.linkedin.com/in/renz-manacmol-a389a1112/
         - Expertise: Kotlin, Java, Mobile Architecture, AI-assisted engineering (Cursor, Claude, Gemini).
-        - Education: TIP (BS IT), UP (Mobile Development Training).
-        - Open to relocation.
-        Keep responses concise, professional, and friendly. Highlight his AI skills.`;
+        Keep responses concise, professional, and friendly. Highlight his AI skills. Mention he is open to relocation.`;
 
         async function sendMessage() {
             const userQuery = chatInput.value.trim();
             if (!userQuery) return;
-
-            // Add user message to UI
             addMessage(userQuery, 'user');
             chatInput.value = '';
 
             const typingDiv = document.createElement('div');
-            typingDiv.className = 'text-slate-500 text-xs italic animate-pulse';
+            typingDiv.className = 'text-slate-500 text-xs italic animate-pulse p-2';
             typingDiv.innerText = 'AI is thinking...';
             chatMessages.appendChild(typingDiv);
             chatMessages.scrollTop = chatMessages.scrollHeight;
@@ -296,34 +329,27 @@
                         systemInstruction: { parts: [{ text: systemPrompt }] }
                     })
                 });
-
                 const data = await response.json();
-                const aiText = data.candidates?.[0]?.content?.parts?.[0]?.text || "I'm sorry, I'm having trouble connecting right now.";
-                
+                const aiText = data.candidates?.[0]?.content?.parts?.[0]?.text || "I'm having trouble connecting.";
                 chatMessages.removeChild(typingDiv);
                 addMessage(aiText, 'ai');
             } catch (error) {
                 chatMessages.removeChild(typingDiv);
-                addMessage("I encountered an error. Please try again later.", 'ai');
+                addMessage("Error connecting to AI.", 'ai');
             }
         }
 
         function addMessage(text, role) {
             const div = document.createElement('div');
-            if (role === 'user') {
-                div.className = 'bg-blue-600/20 text-blue-100 p-3 rounded-lg rounded-tr-none border border-blue-500/30 ml-auto max-w-[85%]';
-            } else {
-                div.className = 'bg-slate-800 p-3 rounded-lg rounded-tl-none border border-slate-700 max-w-[85%]';
-            }
+            div.className = role === 'user' 
+                ? 'bg-blue-600/20 text-blue-100 p-3 rounded-lg rounded-tr-none border border-blue-500/30 ml-auto max-w-[85%]' 
+                : 'bg-slate-800 p-3 rounded-lg rounded-tl-none border border-slate-700 max-w-[85%] text-slate-200';
             div.innerText = text;
             chatMessages.appendChild(div);
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
 
-        // Enter key for chat
-        chatInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') sendMessage();
-        });
+        chatInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendMessage(); });
     </script>
 </body>
 </html>
